@@ -1,113 +1,101 @@
+![SYRIATEL LOGO](https://user-images.githubusercontent.com/122228492/236913666-80474769-3d8e-458d-a7ff-f8cd96f51962.PNG)
 
-# Phase 3 Project - Choosing a Dataset
+# SYRIATEL COMPANY CUSTOMER CHURN ANALYSIS PROJECT
 
-You have the option to either choose a dataset from a curated list or propose your own dataset not on the list. The goal is to choose a dataset appropriate to the type of business problem and/or classification methods that most interests you. **It is up to you to define a stakeholder and business problem appropriate to the dataset you choose.**
+**USING BINARY CLASSIFICATION TO BUILD A MODEL THAT ACCURATELY PREDICTS CUSTOMER CHURN TO HELP SYRIATEL COMPANY IDENTIFY THE FACTORS CONTRIBUTING TO THE CHURN AND TAKE PROACTIVE ACTIONS TOWARDS RETAINING THEIR CUSTOMERS**
 
-If you choose a dataset from the curated list, inform your instructor which dataset you chose and jump right into the project. If you would like to propose your own dataset, run the dataset and business problem by your instructor for approval before starting your project.
+**REPOSITORY OUTLINE**
 
-## Your Get Hired 'Game Plan'
+This repository contains the follwing
+* A jupyter notebook 
+* A non technical presentation.
+* A CRISP-DM report
+* A README file
+* SyriaTel Customer churn data
+* SyriaTel company logo
+* churn distribution visual
 
-Help set yourself up for success by being strategic about your project/dataset choices.
+**OVERVIEW**
 
-**Already know what your job search focus will be?** Consider choosing a dataset that relates to the companies/industries you are interested in and the types of business problems/data they navigate day to day. Doing so demonstrates your subject matter knowledge in their area, significantly elevating your relevance and value as a candidate -- we've seen this strategy WOW companies time and time again!
+This is a binary classification project that conducts a chrn analysis for SyriaTel which is a telecommunication company in Syria. The project aims at identifying the factors that contribute to curstomer churn and Develop a classifier that predicts which customers are likely to churn to enable SyriaTel take appropriate actions and reduce customer attrition.
 
-**Still exploring what type of role you would like to get once you graduate?** That's okay! Try to focus on a topic or problem that you are interested in and passionate about. Doing so will help you produce a better project overall that you enjoy creating and that you can speak about confidently and naturally.
+**DATA**
 
-Coming out of Flatiron School your projects will be listed on your resume and will showcase your specific subject matter knowledge and interest/passions once you're job seeking. Help yourself put your best foot forward and make the strongest first impression possible.
+This project uses the SyriaTel Customer churn data set which is retrieved from Kaggle: https://www.kaggle.com/datasets/becksddf/churn-in-telecoms-dataset. The dataset is suitable for this project based on the following aspects;
 
-Here are two grads who successfully did just this...
+* It contains comprehensive information on various features of the telecommunication services provided by the company including account length, area code, phone number, international plan, voice mail plan, and various other features related to customer usage patterns.
+* The data set also contains the feature 'churn,' which indicates whether a customer has churned or not which will be used as the target variable making the dataset suitable for analyzing customer churn as it contains all the necessary information to develop a predictive model.
+* The data he dataset is large enough, with over 3,000 records, to support the development of a reliable and accurate predictive model. 
 
-> This student was interested in working with government and public sector data, and focused specifically on traffic data and safety. They utilized the Chicago Car Crashes dataset in [one project](https://github.com/jmarkowi/Chicago-Crashes)&#42; then later created a bike lane image dataset from multiple sources for their [capstone project](https://github.com/jmarkowi/NYC_bike_lanes)&#42;. Based on their combination of technical skills and subject-matter expertise, this student landed a government consulting role at ***ASR Analytics*** where they work to prevent identity theft in tax fraud.
+**Target and predictor variables**
 
-> This student ([GitHub link here](https://github.com/kbaranko/NYC-Building-Energy-Intensity/blob/master/README.md)&#42;) focused on working in the clean energy sector, and created their project *NYC Building Energy Density* using data from the 2016 Energy and Water Data Disclosure for New York City Local Law 84. The student landed a role at ***Kevala***, a clean energy software company, in under two months of job seeking.
+The data has various feaatures where `churn` was the target variable feature while the rest were the predictor variable features. the predictor variable features include the `state`, `account length`, `area code`, `phone number`, `international plan`, `voice mail plan`,`number vmail messages`,`total day minutes`, `total day calls`, `total day charge`, `total eve minutes`, `total eve calls`, `total eve charge`,`total night minutes`,`total night calls`,`total night charge`,`total intl minutes`,`total intl calls`,`total intl charge`and `customer service calls`
 
-&#42;*Keep in mind that the Flatiron School Data Science program has changed over time, so these projects may or may not reflect the current project requirements. They are intended as inspiration for your dataset/project choice.*
 
-## Curated List of Datasets
+**Customer churn distribution**
 
-You may select any of the datasets below - we provide brief descriptions of each. Follow the links to learn more about the dataset and business problems before making a final decision.
+![churn distribution](https://github.com/b-irungu/PHASE-3-BINARY-CLASSIFICATION-PROJECT/assets/122228492/00deabcf-7814-4b1a-944d-b1404ecd51f4)
 
-**If you are feeling overwhelmed or behind, we recommend you choose dataset #1.**
 
-### 1) [SyriaTel Customer Churn](https://www.kaggle.com/becksddf/churn-in-telecoms-dataset)
+**METHOD**
 
-Build a classifier to predict whether a customer will ("soon") stop doing business with SyriaTel, a telecommunications company. This is a **binary** classification problem.
+The project used the CRISP-DM data science process to analyse and create a model best for the churn analysis. All the data science steps are described in the CRISP-DM Report:https://github.com/b-irungu/PHASE-3-BINARY-CLASSIFICATION-PROJECT/blob/main/FINAL%20CRISP-DM%20DATA%20REPORT%20-.pdf. The projects used the following Binary classifiers
+* KNN(K-Nearest Neighbours)
+* Logistic Regression
+* Decision Trees
+* Random Forest
 
-Most naturally, your audience here would be the telecom business itself, interested in reducing how much money is lost because of customers who don't stick around very long. The question you can ask is: are there any predictable patterns here?
+**FINDINGS**
 
-### 2) [Tanzanian Water Wells](https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/23/)
+The findings of the various classifiers used in this project are as follows:
 
-This dataset is part of an active competition until April 7, 2023!
+**KNN findings**
 
-Tanzania, as a developing country, struggles with providing clean water to its population of over 57,000,000. There are many water points already established in the country, but some are in need of repair while others have failed altogether.
+This classifiers had the lowest perfomance(based on the recall evaluation), as the recall score ws 19.31%. with this score the model had a high rate of producing false negative churns which would result to mislead decision making if the same was adopted. 
 
-Build a classifier to predict the condition of a water well, using information about the sort of pump, when it was installed, etc. Your audience could be an NGO focused on locating wells needing repair, or the Government of Tanzania looking to find patterns in non-functional wells to influence how new wells are built. Note that this is a **ternary** classification problem by default, but can be engineered to be binary.
+![knn confusion matrix](https://github.com/b-irungu/PHASE-3-BINARY-CLASSIFICATION-PROJECT/assets/122228492/e93e7800-3e82-4e0b-b926-ab35c586795b)
 
-### 3) [H1N1 and Seasonal Flu Vaccines](https://www.drivendata.org/competitions/66/flu-shot-learning/)
 
-This dataset is part of an active competition until March 31, 2022!
+**Logistic Regression findings**
 
-As the world struggles to vaccinate the global population against COVID-19, an understanding of how people’s backgrounds, opinions, and health behaviors are related to their personal vaccination patterns can provide guidance for future public health efforts. Your audience could be someone guiding those public health efforts.
+The recall score for the clssifier was 28% which also indicated that the clasifier perfomed poorly on correctly predicting customer churn, thus the classifier could not be adopted
 
-This challenge: can you predict whether people got H1N1 and seasonal flu vaccines using data collected in the National 2009 H1N1 Flu Survey? This is a **binary** classification problem, but there are two potential targets: whether the survey respondent received the seasonal flu vaccine, or whether the respondent received the H1N1 flu vaccine. Please choose just one of these potential targets for your minimum viable project.
+![logistic regresion confusion matrix](https://github.com/b-irungu/PHASE-3-BINARY-CLASSIFICATION-PROJECT/assets/122228492/145cad4d-956a-4075-871b-aaa331c6d87a)
 
-### 4) [Chicago Car Crashes](https://data.cityofchicago.org/Transportation/Traffic-Crashes-Crashes/85ca-t3if)
 
-Note this links also to [Vehicle Data](https://data.cityofchicago.org/Transportation/Traffic-Crashes-Vehicles/68nd-jvt3) and to [Driver/Passenger Data](https://data.cityofchicago.org/Transportation/Traffic-Crashes-People/u6pd-qa9d)
+**Decision Trees findings**
 
-Build a classifier to predict the primary contributory cause of a car accident, given information about the car, the people in the car, the road conditions etc. You might imagine your audience as a Vehicle Safety Board who's interested in reducing traffic accidents, or as the City of Chicago who's interested in becoming aware of any interesting patterns. 
+The model reported a high accuracy of 0.929 and the highest recall score of 78%. with the highest recall and accuracy, the model was adopted and business recomdations and conclusions drawn from it.        
 
-This is a **multi-class** classification problem. You will almost certainly want to bin, trim or otherwise limit the number of target categories on which you ultimately predict. Note that some primary contributory causes have very few samples, for example.
+![decision tree confusion matrix](https://github.com/b-irungu/PHASE-3-BINARY-CLASSIFICATION-PROJECT/assets/122228492/dcc4c3b1-98f1-44ae-bf42-1e24b0734ade)
 
-### 5) [Terry Traffic Stops](https://data.seattle.gov/Public-Safety/Terry-Stops/28ny-9ts8)
 
-In [Terry v. Ohio](https://www.oyez.org/cases/1967/67), a landmark Supreme Court case in 1967-8, the court found that a police officer was not in violation of the "unreasonable search and seizure" clause of the Fourth Amendment, even though he stopped and frisked a couple of suspects only because their behavior was suspicious. Thus was born the notion of "reasonable suspicion", according to which an agent of the police may e.g. temporarily detain a person, even in the absence of clearer evidence that would be required for full-blown arrests etc. Terry Stops are stops made of suspicious drivers.
+**Random Forest Findings**
 
-Build a classifier to predict whether an arrest was made after a Terry Stop, given information about the presence of weapons, the time of day of the call, etc. This is a binary classification problem.
+Random Forest had a Recall Metric of 23%. 23% of the predictions are False Negatives which means that the model will 23% of the time 
+predict that a customer will not churn yet the customer churns.
 
-Note that this dataset also includes information about gender and race. You may use this data as well. You could conceivably pitch your project as an inquiry into whether race (of officer or of subject) plays a role in whether or not an arrest is made.
+![random forest confusion matrix](https://github.com/b-irungu/PHASE-3-BINARY-CLASSIFICATION-PROJECT/assets/122228492/080e2852-66b0-48cc-8c66-152ee8f942ab)
 
-If you do elect to make use of race or gender data, be aware that this can make your project a highly sensitive one; your discretion will be important, as well as your transparency about how you use the data and the ethical issues surrounding it.
 
-## Proposing Your Own Dataset
 
-Sourcing new data is a valuable skill for data scientists, but it requires a great deal of care. An inappropriate dataset or an unclear business problem can lead you to spend a lot of time on a project that delivers underwhelming results. The guidelines below will help you complete a project that demonstrates your ability to engage in the full data science process.
+**CONCLUSION**
 
-Once you've sourced your own dataset and identified the business problem you want to solve with it, **you must run them by your instructor for approval.**
+Based on the findings, the business conclusion can be drawn as follows:
 
-### Data Guidelines
+* Importance of Recall: In the context of predicting customer churn, the focus was placed on optimizing for Recall. By prioritizing Recall, the goal was to minimize the number of customers who are incorrectly classified as non-churners.
+* Best Model: Among the models explored, the decision tree Classifier performed the best since was able to correctly identify 78% of the customers who were likely to churn.the model had an accuracy score of 92.8%
+* The factors that mostly influence churn of customer include total day charge, customr service calls and number oof voice mail messages.
+* Predicting customer churn is an ongoing process, and it is important to continuously refine and improve the model. Regularly monitoring the model's performance, collecting new data, and incorporating feedback from business stakeholders can lead to better predictions and more accurate identification of customers who are at risk of churning
 
-Your dataset must be:
 
-1. **Appropriate for classification.** It should have a categorical outcome or the data needed to engineer one.   
+**BUSINESS RECOMMENDATION**
 
-2. **Usable to solve a specific business problem.** This solution must rely on your classification model.
-
-3. **Somewhat complex.** It should contain a minimum of 1000 rows and 10 features.
-
-4. **Unfamiliar.** It can't be one we've already worked with during the course or that is commonly used for demonstration purposes (e.g. Titanic).
-
-5. **Manageable.** Stick to datasets that you can model using the techniques introduced in Phase 3.
-
-### Problem First, or Data First?
-
-There are two ways that you can source your own dataset: **_Problem First_** or **_Data First_**. The less time you have to complete the project, the more strongly we recommend a Data First approach to this project.
-
-**_Problem First_**: Start with a problem that you are interested in that you could potentially solve with a classification model. Then look for data that you could use to solve that problem. This approach is high-risk, high-reward: Very rewarding if you are able to solve a problem you are invested in, but frustrating if you end up sinking lots of time in without finding appropriate data. To mitigate the risk, set a firm limit for the amount of time you will allow yourself to look for data before moving on to the Data First approach.
-
-**_Data First_**: Take a look at some of the most popular internet repositories of cool data sets we've listed below. If you find a data set that's particularly interesting for you, then it's totally okay to build your problem around that data set.
-
-### Potential Data Sources
-
-There are plenty of amazing places that you can get your data from. We recommend you start looking at data sets in some of these resources first:
-
-* [UCI Machine Learning Datasets Repository](https://archive.ics.uci.edu/ml/datasets.php)
-* [Kaggle Datasets](https://www.kaggle.com/datasets)
-* [Awesome Datasets Repo on Github](https://github.com/awesomedata/awesome-public-datasets)
-* Local data portals for state and local government resources
-    - Examples: [NYC](https://opendata.cityofnewyork.us/), [Houston](http://data.houstontx.gov/), [Seattle](https://data.seattle.gov/), [California](https://data.ca.gov/)
-* [Inside AirBNB](http://insideairbnb.com/)
-* [FiveThirtyEight’s data portal](https://data.fivethirtyeight.com/)
-* [Data is Plural’s Archive Spreadsheet](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0)
-* [Datasets Subreddit](https://www.reddit.com/r/datasets/)
+Determine the unique needs of the following customers and meet them; 
+                  
+* The company should ensure continoous prediction of the factors influencing churn by contionously collecting new data and improving the model as prediction is an ongoing process.
+* To reduce customer churn, the company should review the charge rate for the day calls as total day charge is the most influencial predictor for churn in this model.
+* SyriaTel should improve the customer service calls through attentive listening to customers issues, feedbackd and complains and also through offering timely solutions for the same.
+* SyriaTel company should reach out to the customers with high numbers of voicemail messages to determine the cause for the voicemail messages surge and know how to adress the same.
+* SyriaTel should come up with a tailormade data and voice plan products for the international customers based on their unique needs.
 
