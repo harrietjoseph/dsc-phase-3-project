@@ -51,31 +51,31 @@ The findings of the various classifiers used in this project are as follows:
 
 **KNN findings**
 
-This classifiers had the lowest perfomance(based on the recall evaluation), as the recall score ws 19.31%. with this score the model had a high rate of producing false negative churns which would result to mislead decision making if the same was adopted. 
+This classifiers had the lowest perfomance(based on the recall evaluation), as the recall score ws 54%. with this score the model had a high rate of producing false negative churns which would result to mislead decision making if the same was adopted. 
 
-![knn confusion matrix](https://github.com/b-irungu/PHASE-3-BINARY-CLASSIFICATION-PROJECT/assets/122228492/e93e7800-3e82-4e0b-b926-ab35c586795b)
+
+![knn confusion matrix](https://github.com/harrietjoseph/dsc-phase-3-project/assets/120625249/bcff7f69-fa78-4caf-a6e0-2531f9741928)
 
 
 **Logistic Regression findings**
 
-The recall score for the clssifier was 28% which also indicated that the clasifier perfomed poorly on correctly predicting customer churn, thus the classifier could not be adopted
+The recall score for the clssifier was 81.82% which also indicated that the clasifier perfomed faily accurate on correctly predicting customer churn, thus the classifier performed better then the knn
 
-![logistic regresion confusion matrix](https://github.com/b-irungu/PHASE-3-BINARY-CLASSIFICATION-PROJECT/assets/122228492/145cad4d-956a-4075-871b-aaa331c6d87a)
+![logistic regresion confusion matrix](https://github.com/harrietjoseph/dsc-phase-3-project/assets/120625249/52b0b98e-8dcc-4dd6-92d4-b7ed37117af2)
 
 
 **Decision Trees findings**
 
-The model reported a high accuracy of 0.929 and the highest recall score of 78%. with the highest recall and accuracy, the model was adopted and business recomdations and conclusions drawn from it.        
+The model reported a high accuracy of 0.929 and the highest recall score of 93%. with the highest recall and accuracy, the model was adopted and business recomdations and conclusions drawn from it.        
 
-![decision tree confusion matrix](https://github.com/b-irungu/PHASE-3-BINARY-CLASSIFICATION-PROJECT/assets/122228492/dcc4c3b1-98f1-44ae-bf42-1e24b0734ade)
+![decision tree confusion matrix](https://github.com/harrietjoseph/dsc-phase-3-project/assets/120625249/6c0a37d5-1b54-4422-9aac-cdb1a4fc922c)
 
 
 **Random Forest Findings**
 
-Random Forest had a Recall Metric of 23%. 23% of the predictions are False Negatives which means that the model will 23% of the time 
-predict that a customer will not churn yet the customer churns.
+Random Forest had a Recall Metric of 0.8409 means that the classifier did great at identifying the proportion of customers that are more likely to churn.
 
-![random forest confusion matrix](https://github.com/b-irungu/PHASE-3-BINARY-CLASSIFICATION-PROJECT/assets/122228492/080e2852-66b0-48cc-8c66-152ee8f942ab)
+![random forest confusion matrix](https://github.com/harrietjoseph/dsc-phase-3-project/assets/120625249/cb5ce898-12d1-4422-a588-747ef00483d2)
 
 
 
@@ -84,7 +84,7 @@ predict that a customer will not churn yet the customer churns.
 Based on the findings, the business conclusion can be drawn as follows:
 
 * Importance of Recall: In the context of predicting customer churn, the focus was placed on optimizing for Recall. By prioritizing Recall, the goal was to minimize the number of customers who are incorrectly classified as non-churners.
-* Best Model: Among the models explored, the decision tree Classifier performed the best since was able to correctly identify 78% of the customers who were likely to churn.the model had an accuracy score of 92.8%
+* Best Model: Among the models explored, the decision tree Classifier performed the best since was able to correctly identify 93% of the customers who were likely to churn.the model had an accuracy score of 92.8%
 * The factors that mostly influence churn of customer include total day charge, customr service calls and number oof voice mail messages.
 * Predicting customer churn is an ongoing process, and it is important to continuously refine and improve the model. Regularly monitoring the model's performance, collecting new data, and incorporating feedback from business stakeholders can lead to better predictions and more accurate identification of customers who are at risk of churning
 
